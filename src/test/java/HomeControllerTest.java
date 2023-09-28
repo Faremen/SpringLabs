@@ -1,5 +1,3 @@
-package ru.rsreu.labs;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +21,5 @@ public class HomeControllerTest {
                 .andExpect(status().isOk()) /*Ожидание HTTP-ответа 200*/
                 .andExpect(view().name("home")) /*Ожидание ответа "home"*/
                 .andExpect(content().string(containsString("Кальянчик")));
-                
     }
 }
