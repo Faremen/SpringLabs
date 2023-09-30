@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+body {
+    background: #9e3580;
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+}
+
+body > * {
+    margin: 10px;
+    padding: 10px;
+}
+
+a {
+    color: #fff;
+    font-size: 14;
+}
+
+button {
+    margin: 10px;
+    padding: 4px;
+    background: #70205a;
+    color: #fff;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-flex > * {
+    margin: 10px;
+}
+
+.error {
+    color: red;
+}

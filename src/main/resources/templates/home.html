@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Кольянчик</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
 </head>
-<body>
-<h1>Кальянчик</h1>
-<img th:src="@{/images/mainIcon.png}"/>
-</body>
+    <body>
+        <h1>Кальянчик</h1>
+        <img th:src="@{/images/mainIcon.png}"/>
+        <div>
+            <a href="/order">Заказать кальянчик</a>
+        </div>
+    </body>
 </html>
