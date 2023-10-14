@@ -9,25 +9,45 @@
     <body>
         <img style="width: 20%;" th:src="@{/images/mainIcon.png}"/>
         <h2>Самое время заказать кальянчик, но для начала заполните данные :3</h2>
-        <a href="/home">Вернуться к кальянчику</a>
+        <a href="/">Вернуться к кальянчику</a>
 
         <form method="POST" th:object="${order}">
             <div class="display-flex">
-                <label for="selectedTable">Введите номер столика (от 1 до 10)</label>
-                <input type="text" placeholder="Номер столика" th:field="*{selectedTable}">
+                <label for="selectedTable">Введите номер столика, который хотит занять (от 1 до 10)</label>
+                <input type="number" placeholder="Номер столика" th:field="*{selectedTable}" id="selectedTable">
                 <span class="error"
                       th:if="${#fields.hasErrors('selectedTable')}"
                       th:errors="*{selectedTable}">Table Error</span>
             </div>
             <div class="display-flex">
-                <label for="telephone">Ввдите номер телефона</label>
-                <input type="text" placeholder="Номер телефона" th:field="*{telephone}">
+                <label>Выбирите табак</label>
+                <select name="tobacco" th:field="*{hookah.tobacco}">
+                    <option th:each="tobacco : ${T(hookah.models.enums.Tobacco).values}"
+                            th:value="${tobacco}"
+                            th:text="${tobacco.getDisplayName()}"></option>
+                </select>
+                <span class="error"
+                      th:if="${#fields.hasErrors('hookah.tobacco')}"
+                      th:errors="*{hookah.tobacco}">Tobacco Error</span>
+            </div>
+            <div class="display-flex">
+                <label>Выбирите наполнитель</label>
+                <select name="filler" th:field="*{hookah.filler}">
+                    <option th:each="filler : ${T(hookah.models.enums.Filler).values}"
+                            th:value="${filler}"
+                            th:text="${filler.getDisplayName()}"></option>
+                </select>
+                <span class="error"
+                      th:if="${#fields.hasErrors('hookah.filler')}"
+                      th:errors="*{hookah.filler}">Tobacco Error</span>
+            </div>
+            <div class="display-flex">
+                <label for="telephone">Введите ваш номер телефона</label>
+                <input type="text" placeholder="Номер телефона" th:field="*{telephone}" id="telephone">
                 <span class="error"
                       th:if="${#fields.hasErrors('telephone')}"
                       th:errors="*{telephone}">Telephone Error</span>
             </div>
-
-
             <button>Сделать заказ</button>
         </form>
     </body>

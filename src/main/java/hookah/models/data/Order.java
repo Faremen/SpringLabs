@@ -1,7 +1,6 @@
-package hookah.data;
+package hookah.models.data;
 
 import lombok.Data;
-import hookah.enums.Hookah;
 
 import jakarta.validation.constraints.*;
 
