@@ -15,8 +15,7 @@ import hookah.models.data.Order;
 public class OrderController {
 
     @GetMapping
-    public String order(@ModelAttribute Order order, Model model) {
-        model.addAttribute("order", order);
+    public String order(@ModelAttribute("order") Order order) {
         return "orderPage";
     }
 
