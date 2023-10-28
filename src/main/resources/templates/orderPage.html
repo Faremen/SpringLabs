@@ -22,9 +22,9 @@
             <div class="display-flex">
                 <label>Выбирите табак</label>
                 <select name="tobacco" th:field="*{hookah.tobacco}">
-                    <option th:each="tobacco : ${T(hookah.models.enums.Tobacco).values}"
-                            th:value="${tobacco}"
-                            th:text="${tobacco.getDisplayName()}"></option>
+                    <option th:each="tobacco : ${tobaccos}"
+                            th:value="${tobacco.getId()}"
+                            th:text="${tobacco.getName()}"></option>
                 </select>
                 <span class="error"
                       th:if="${#fields.hasErrors('hookah.tobacco')}"
@@ -33,9 +33,9 @@
             <div class="display-flex">
                 <label>Выбирите наполнитель</label>
                 <select name="filler" th:field="*{hookah.filler}">
-                    <option th:each="filler : ${T(hookah.models.enums.Filler).values}"
-                            th:value="${filler}"
-                            th:text="${filler.getDisplayName()}"></option>
+                    <option th:each="filler : ${fillers}"
+                            th:value="${filler.getId()}"
+                            th:text="${filler.getName()}"></option>
                 </select>
                 <span class="error"
                       th:if="${#fields.hasErrors('hookah.filler')}"

@@ -1,17 +1,22 @@
 package hookah.models.data;
 
-import hookah.models.enums.Filler;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import hookah.models.enums.Tobacco;
 
+@Entity
 @Data
 public class Hookah {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
+    @ManyToOne(targetEntity = Tobacco.class)
+    @NotNull(message = "Табак не заполнен")
     private Tobacco tobacco;
 
-    @NotNull
+    @ManyToOne(targetEntity = Filler.class)
+    @NotNull(message = "Фильтр не заполнен")
     private Filler filler;
 }
