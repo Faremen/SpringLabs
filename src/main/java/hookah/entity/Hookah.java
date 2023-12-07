@@ -1,4 +1,4 @@
-package hookah.models.data;
+package hookah.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

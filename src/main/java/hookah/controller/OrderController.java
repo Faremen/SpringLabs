@@ -1,11 +1,12 @@
-package hookah.web.controllers;
+package hookah.controller;
 
-import hookah.models.data.Filler;
-import hookah.models.data.Tobacco;
-import hookah.models.repository.FillerRepository;
-import hookah.models.repository.HookahRepository;
-import hookah.models.repository.OrderRepository;
-import hookah.models.repository.TobaccoRepository;
+import hookah.entity.Filler;
+import hookah.entity.Order;
+import hookah.entity.Tobacco;
+import hookah.repository.FillerRepository;
+import hookah.repository.HookahRepository;
+import hookah.repository.OrderRepository;
+import hookah.repository.TobaccoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,18 +16,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import hookah.models.data.Order;
-
-import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/order")
 public class OrderController {
 
-    private OrderRepository orderRepository;
-    private FillerRepository fillerRepository;
-    private TobaccoRepository tobaccoRepository;
-    private HookahRepository hookahRepository;
+    private final OrderRepository orderRepository;
+    private final FillerRepository fillerRepository;
+    private final TobaccoRepository tobaccoRepository;
+    private final HookahRepository hookahRepository;
 
     @Autowired
     public OrderController(OrderRepository orderRepository,

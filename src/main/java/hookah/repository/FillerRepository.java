@@ -1,6 +1,6 @@
-package hookah.models.repository;
+package hookah.repository;
 
-import hookah.models.data.Filler;
+import hookah.entity.Filler;
 import org.springframework.data.repository.CrudRepository;
 
 public interface FillerRepository extends CrudRepository<Filler, Long> {

@@ -1,6 +1,6 @@
-package hookah.models.repository;
+package hookah.repository;
 
-import hookah.models.data.Hookah;
+import hookah.entity.Hookah;
 import org.springframework.data.repository.CrudRepository;
 
 public interface HookahRepository extends CrudRepository<Hookah, Long> {
