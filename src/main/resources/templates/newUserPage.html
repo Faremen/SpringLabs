@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+</head>
+    <body>
+    <h2>↓ Заполните для регистрации ↓</h2>
+    <span class="error" th:text="${error}">
+    </span>
+
+        <form method="POST" th:object="${user}">
+            <div class="display-flex">
+                <label for="username">Введите логин</label>
+                <input type="text" placeholder="Логин" th:field="*{username}" id="username">
+                <span class="error"
+                      th:if="${#fields.hasErrors('username')}"
+                      th:errors="*{username}">Username Error</span>
+            </div>
+            <div class="display-flex">
+                <label for="username">Введите пароль</label>
+                <input type="text" placeholder="Пароль" th:field="*{password}" id="password">
+                <span class="error"
+                      th:if="${#fields.hasErrors('password')}"
+                      th:errors="*{password}">Password Error</span>
+            </div>
+            <div class="display-flex">
+                <label for="name">Введите свое имя</label>
+                <input type="text" placeholder="Имя" th:field="*{name}" id="name">
+                <span class="error"
+                      th:if="${#fields.hasErrors('name')}"
+                      th:errors="*{name}">Name Error</span>
+            </div>
+            <div class="display-flex">
+                <label for="telephone">Введите ваш номер телефона</label>
+                <input type="text" placeholder="Номер телефона" th:field="*{telephone}" id="telephone">
+                <span class="error"
+                      th:if="${#fields.hasErrors('telephone')}"
+                      th:errors="*{telephone}">Telephone Error</span>
+            </div>
+            <div class="display-flex">
+                <label for="telephone">Введите email</label>
+                <input type="text" placeholder="Email" th:field="*{email}" id="email">
+                <span class="error"
+                      th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}">Email Error</span>
+            </div>
+            <button>Зарегистрироваться</button>
+        </form>
+    </body>
+</html>

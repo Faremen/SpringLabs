@@ -1,9 +1,9 @@
 package hookah.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
-import jakarta.validation.constraints.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "Hookah_Order")
