@@ -3,7 +3,7 @@ create table filler
     id   bigint not null,
     name varchar(255),
     primary key (id)
-)
+);
 
 create table hookah
 (
@@ -11,7 +11,7 @@ create table hookah
     filler_id  bigint not null,
     tobacco_id bigint not null,
     primary key (id)
-)
+);
 
 create table hookah_order
 (
@@ -20,14 +20,14 @@ create table hookah_order
     telephone      varchar(255),
     hookah_id      bigint,
     primary key (id)
-)
+);
 
 create table tobacco
 (
     id   bigint not null,
     name varchar(255),
     primary key (id)
-)
+);
 
 create table users
 (
@@ -39,4 +39,4 @@ create table users
     telephone varchar(255),
     username  varchar(255),
     primary key (id)
-)
+);
